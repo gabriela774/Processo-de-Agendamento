@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento Pet</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
+    <!--Barra de opções a esquerda-->
+    <header class="navbar">
+       <div class="logo">
+    <img src="img/logo.jpg" alt="Logo">
+    <h1>PetCare</h1>
+</div>
+        <nav>
+            <a href="#">Perfil</a>
+            <a href="#">Agendamento</a>
+            <a href="#">Exames</a>
+            <a href="#">Configurações</a>
+        </nav>
+    </header>
 
-<!--Barra de opções a esquerda-->
-<header class="navbar">
-    <h1> PetCare</h1>
-    <nav>
-        <a href="#">Perfil</a>
-        <a href="#">Agendamento</a>
-        <a href="#">Exames</a>
-        <a href="#">Configurações</a>
-    </nav>
-</header>
+    <!-- banner simples  -->
+    <section class="banner">
+        <h2>Agende consultas e exames para seu pet </h2>
+        <p>Cuidado rápido, fácil e organizado</p>
+    </section>
 
-<!-- banner simples  -->
-<section class="banner">
-    <h2>Agende consultas e exames para seu pet </h2>
-    <p>Cuidado rápido, fácil e organizado</p>
-</section>
+    <!-- Formulario com os dados para agendamento -->
+    <section class="container">
+        <h2>Novo Agendamento</h2>
 
-<!-- Formulario com os dados para agendamento -->
-<section class="container">
-    <h2>Novo Agendamento</h2>
+        <form class="form" action="php/salvar_agendamento.php" method="POST">
 
-    <form class="form">
-        <input type="text" placeholder="Nome do cliente" required>
-        <input type="text" placeholder="CPF" required>
-        <input type="email" placeholder="Email" required>
+    <input type="text" name="nome" placeholder="Nome do cliente" required>
+    <input type="text" name="cpf" placeholder="CPF" required>
+    <input type="email" name="email" placeholder="Email" required>
 
-        <input type="text" placeholder="Nome do pet" required>
+    <input type="text" name="pet" placeholder="Nome do pet" required>
 
-        <!-- Opções de exame ao clicar no botão -->
-        <select required>
-            <option value="">Tipo de exame</option>
-            <option>Consulta</option>
-            <option>Vacina</option>
-            <option>Exame</option>
-        </select>
+    <select name="tipo" required>
+        <option value="">Tipo de atendimento</option>
+        <option>Consulta</option>
+        <option>Vacina</option>
+        <option>Exame</option>
+    </select>
 
-        <!-- Pede data e hora -->
-        <input type="date" required>
-        <input type="time" required>
+    <input type="date" name="data" required>
+    <input type="time" name="hora" required>
 
-        <button type="submit">Agendar</button>
-    </form>
-</section>
+    <button type="submit">Agendar</button>
 
-<!-- Cards no final da pagina  -->
-<section class="cards">
-    <div class="card">
-        <h3> Agendamentos</h3>
-        <p>Gerencie consultas</p>
-    </div>
+</form>
+    </section>
 
-    <div class="card">
-        <h3> Exames</h3>
-        <p>Acompanhe resultados</p>
-    </div>
+    <!-- Cards no final da pagina  -->
+    <section class="cards">
+        <div class="card">
+            <h3 class="text"> Agendamentos</h3>
+            <p>Gerencie consultas</p>
+        </div>
 
-    <div class="card">
-        <h3> Configurações</h3>
-        <p>Ajuste sua conta</p>
-    </div>
-</section>
+        <div class="card">
+            <h3 class="text"> Exames</h3>
+            <p>Acompanhe resultados</p>
+        </div>
+
+        <div class="card">
+            <h3 class="text"> Configurações</h3>
+            <p>Ajuste sua conta</p>
+        </div>
+    </section>
 
 </body>
+
 </html>
