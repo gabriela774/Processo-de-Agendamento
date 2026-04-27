@@ -1,5 +1,5 @@
 <?php
-
+//recebe dados,valida ,verifica se já existe horário, se existir  bloqueia, se não existir → salva
 include("conexao.php");
 include("Agendamento.php");
 
@@ -24,5 +24,4 @@ try {
 
 } catch (Exception $e) {
     echo "Erro: " . $e->getMessage();
-}
 }
