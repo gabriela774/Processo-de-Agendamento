@@ -1,0 +1,12 @@
+CREATE TABLE agendamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome  VARCHAR(100) NOT NULL,
+    cpf  VARCHAR(14) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    pet  VARCHAR(100) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    data DATE NOT NULL,
+    hora TIME NOT NULL,
+    status VARCHAR(20) DEFAULT 'ativo',
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
