@@ -2,19 +2,19 @@
 
 include("conexao.php");
 
-$sql = "SELECT * FROM agendamentos";
+$sql = "SELECT * FROM agendamento";
 $result = mysqli_query($conn, $sql);
 
-echo "<h2>Agendamentos</h2>";
+echo "<h2>agendamento</h2>";
 
-echo "<table border='1'>
-<tr>
-<th>Nome</th>
-<th>CPF</th>
-<th>Email</th>
-<th>Pet</th>
-<th>Tipo</th>
-<th>Data</th>
+    echo "<table border='1'>
+    <tr>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>Email</th>
+    <th>Pet</th>
+    <th>Tipo</th>
+    <th>Data</th>
 <th>Hora</th>
 </tr>";
 
