@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento Pet</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/sucesso.css">
+<link rel="stylesheet" href="../css/erro.css">
+
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -37,8 +40,7 @@
     <section class="container">
         <h2>Novo Agendamento</h2>
 
-        <form class="form" action="php/salvar_agendamento.php" method="POST">
-
+<form class="form" action="../php/salvar_agendamento.php" method="POST">
     <input type="text" name="nome" placeholder="Nome do cliente" required>
     <input type="text" name="cpf" placeholder="CPF" required>
     <input type="email" name="email" placeholder="Email" required>

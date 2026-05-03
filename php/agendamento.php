@@ -39,7 +39,7 @@ class agendamento {
         $data = $this->dataHora->format('Y-m-d');
         $hora = $this->dataHora->format('H:i:s');
 
-        $sql = "INSERT INTO agendamento
+        $sql = "INSERT INTO agendamentos
         (nome, cpf, email, pet, tipo, data, hora)
         VALUES 
         ('$this->nome', '$this->cpf', '$this->email', '$this->pet', '$this->tipo', '$data', '$hora')";

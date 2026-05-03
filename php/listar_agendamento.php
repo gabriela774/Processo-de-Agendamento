@@ -2,7 +2,7 @@
 
 include("conexao.php");
 
-$sql = "SELECT * FROM agendamento";
+$sql = "SELECT * FROM agendamentos";
 $result = mysqli_query($conn, $sql);
 
 echo "<h2>agendamento</h2>";
