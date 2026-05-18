@@ -1,13 +1,33 @@
 <?php
+// recebe dados, valida, verifica se já existe horário,
+// se existir bloqueia, se não existir vai salvar
 
 include("conexao.php");
-include("Agendamento.php");
+include("agendamento.php");
 
 try {
 
+    // recebe data e hora inseridas pelo usuário
+    $data = $_POST['data'];
+    $hora = $_POST['hora'];
+
+    // verifica internamente se já tem
+    $sqlVerifica = "SELECT id FROM agendamentos
+                    WHERE data = '$data'
+                    AND hora = '$hora'
+                    AND status = 'Ativo'";
+
+    $resultado = mysqli_query($conn, $sqlVerifica);
+
+    // se existir bloqueia e redireciona para tela de erro
+    if (mysqli_num_rows($resultado) > 0) {
+        header("Location: ../html/erro.html");
+        exit;
+    }
+
     $dataHora = new DateTime($_POST['data'] . " " . $_POST['hora']);
 
-    $agendamento = new Agendamento(
+    $agendamento = new agendamento(
         $_POST['nome'],
         $_POST['cpf'],
         $_POST['email'],
@@ -16,13 +36,19 @@ try {
         $dataHora
     );
 
+    // se não existir salva e redireciona para tela de sucesso
     if ($agendamento->salvar($conn)) {
-        echo "Agendamento realizado com sucesso!";
+        header("Location: ../html/sucesso.html");
+        exit;
     } else {
-        echo "Erro ao salvar!";
+        header("Location: ../html/erro.html");
+        exit;
     }
 
 } catch (Exception $e) {
-    echo "Erro: " . $e->getMessage();
+
+    // qualquer erro inesperado redireciona para tela de erro
+    header("Location: ../html/erro.html");
+    exit;
 }
-}
+?>

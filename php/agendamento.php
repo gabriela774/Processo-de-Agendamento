@@ -1,6 +1,6 @@
 <?php
 
-class Agendamento {
+class agendamento {
 
     private string $id;
     private string $nome;
@@ -31,7 +31,7 @@ class Agendamento {
         $this->pet = $pet;
         $this->tipo = $tipo;
         $this->dataHora = $dataHora;
-        $this->status = "ativo";
+        $this->status = "Ativo";
     }
 
     public function salvar($conn): bool {
@@ -39,7 +39,7 @@ class Agendamento {
         $data = $this->dataHora->format('Y-m-d');
         $hora = $this->dataHora->format('H:i:s');
 
-        $sql = "INSERT INTO agendamentos 
+        $sql = "INSERT INTO agendamentos
         (nome, cpf, email, pet, tipo, data, hora)
         VALUES 
         ('$this->nome', '$this->cpf', '$this->email', '$this->pet', '$this->tipo', '$data', '$hora')";

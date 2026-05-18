@@ -1,0 +1,26 @@
+name: PetCare CI
+
+on:
+  push:
+    branches: [ "main", "feature/createarquivo-css" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  php-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Validar sintaxe dos arquivos PHP
+        run: find . -name "*.php" -exec php -l {} \;
+
+      - name: Finalizado
+        run: echo "CI executado com sucesso"
